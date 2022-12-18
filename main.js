@@ -9,8 +9,18 @@ class Animal {
         }
 }
 
+class Oiseau extends Animal {
+    constructor(race, nombreDePattes, poids, longueurDesAiles) {
+        super(race, nombreDePattes, poids) // super est une fonction permettant d'appeler la classe Animal en l'occurence pour l'héritge
+        this.longueurDesAiles = longueurDesAiles
+    }
+    voler() {
+        console.log(`L'oiseau a de ${this.longueurDesAiles} ailes`)
+    }
+}
+
 var koala = new Animal("Koala", "55", "4")
 koala.details()
 
-var oiseau = new Animal('Pigeon', '7', '2')
-oiseau.details()
+var perroquet = new Oiseau('Pigeon', '7', '2', 'grandes')
+perroquet.details(); perroquet.voler()
